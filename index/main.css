@@ -1,0 +1,50 @@
+window {
+	--ctp-macchiato-text: #cad3f5;
+	--ctp-macchiato-base: #24273a;
+	--ctp-macchiato-subtext1: #b8c0e0;
+	--ctp-macchiato-subtext0: #a5adcb;
+	color: var(--ctp-macchiato-text);
+
+	font-family: "Fira Code";
+	font-size: 2rem;
+	--partial-dark-5: color(from var(--dark-5) srgb r g b / 0.8);
+	--partial-dark-3: color(from var(--dark-5) srgb r g b / 0.7);
+	filter: saturate(60%);
+	background-size: cover;
+	background-position: center;
+}
+
+#beginning-lobby {
+	background-image: radial-gradient(circle, var(--partial-dark-3) 0%, var(--partial-dark-5) 100%), url("resource:///ecliptica/tool/assets/maps/Beginning_Lobby.png");
+}
+
+#the-in-between {
+	background-image: radial-gradient(circle, var(--partial-dark-3) 0%, var(--partial-dark-5) 100%), url("resource:///ecliptica/tool/assets/maps/The_Inbetween.webp");
+}
+
+box {
+	margin: 0.3rem;
+}
+
+text {
+	text-shadow: 3px 3px;
+}
+
+#target-self {
+	color: oklab(from var(--accent-red) var(--standalone-color-oklab));
+}
+
+#boss-box {
+	margin-bottom: .8rem;
+	margin-right: 1rem;
+	border-right: .05rem solid var(--ctp-macchiato-text);
+	border-bottom: .05rem solid var(--ctp-macchiato-text);
+	border-radius: 1rem;
+	font-size: 0.5rem;
+}
+
+#subtext {
+	color: var(--ctp-macchiato-subtext0);
+	font-size: 1.3rem;
+	padding-left: 2.5em;
+}

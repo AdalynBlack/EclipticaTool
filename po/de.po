@@ -1,0 +1,25 @@
+#: index/home.ui:4
+msgid "Open Tool for Ecliptica"
+msgstr ""
+
+#: index/home.ui:28
+msgid "No Damage Dealt"
+msgstr "Kein Schaden verursacht"
+
+#: index/home.ui:39
+msgid "Run Stats Unknown"
+msgstr ""
+
+#: index/home.ui:50
+msgid "No Boss Active"
+msgstr ""
+
+#: src/main.c:89
+#, c-format
+msgid "%s targeting %s"
+msgstr ""
+
+#: src/main.c:102
+#, fuzzy, c-format
+msgid "%d %s Damage Dealt"
+msgstr "%d %s Schaden verursacht"

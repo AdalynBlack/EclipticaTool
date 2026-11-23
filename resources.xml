@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/ecliptica/tool">
+		<file compressed="true">index/main.css</file>
+		<file compressed="true">index/home.ui</file>
+		<file>assets/maps/Beginning_Lobby.png</file>
+		<file>assets/maps/The_Inbetween.webp</file>
+	</gresource>
+</gresources>

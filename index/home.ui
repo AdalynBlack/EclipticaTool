@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkWindow" id="window">
+    <property name="title" translatable="yes">Open Tool for Ecliptica</property>
+    <property name="name">beginning-lobby</property>
+    <property name="resizable">False</property>
+    <property name="default-width">64</property>
+    <property name="default-height">64</property>
+    <property name="decorated">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkButton" id="infoButton">
+                <property name="name">info-button</property>
+              </object>
+            </child>
+          </object>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkImage" id="bossIcon">
+                <property name="name">boss-box</property>
+                <property name="pixel_size">64</property>
+                <property name="has_tooltip">yes</property>
+                <property name="tooltip_text">No Active Boss</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="targetLabel">
+                <property name="label" translatable="yes">No Target</property>
+                <property name="halign">start</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="damageLabel">
+            <property name="name">subtext</property>
+            <property name="label" translatable="yes">No Damage Dealt</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="infoLabel">
+            <property name="name">subtext</property>
+            <property name="label" translatable="yes">Run Stats Unknown</property>
+            <property name="halign">start</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
