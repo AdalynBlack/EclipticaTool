@@ -80,8 +80,49 @@ void login_cb(char *user, struct home_state *state) {
 }
 
 static void set_phase(float phase, struct home_state *state) {
-	char label[256];
-	sprintf(label, _("Phase: %2.1f%%"), phase * 100);
+	char label[128];
+
+	char phase_name[64];
+	int distinct_phase = phase * 10;
+	switch (distinct_phase) {
+		case 0:
+			strncpy(phase_name, _("Early Primal"), 64);
+			break;
+		case 1:
+			strncpy(phase_name, _("Late Primal"), 64);
+			break;
+		case 2:
+			strncpy(phase_name, _("Early Penumbral"), 64);
+			break;
+		case 3:
+			strncpy(phase_name, _("Late Penumbral"), 64);
+			break;
+		case 4:
+			strncpy(phase_name, _("Early Antumbral"), 64);
+			break;
+		case 5:
+			strncpy(phase_name, _("Late Antumbral"), 64);
+			break;
+		case 6:
+			strncpy(phase_name, _("Early Umbral"), 64);
+			break;
+		case 7:
+			strncpy(phase_name, _("Late Umbral"), 64);
+			break;
+		case 8:
+			strncpy(phase_name, _("Early Eclipse"), 64);
+			break;
+		case 9:
+			strncpy(phase_name, _("Late Eclipse"), 64);
+			break;
+		case 10:
+			strncpy(phase_name, _("Eye of the Eclipse"), 64);
+			break;
+		default:
+			strncpy(phase_name, _("Unknown Phase"), 64);
+	}
+
+	sprintf(label, _("%s (%2.1f%%)"), phase_name, phase * 100);
 	gtk_label_set_text(GTK_LABEL(state->ui->phase_label), label);
 }
 

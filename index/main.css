@@ -3,6 +3,7 @@ window {
 	--ctp-macchiato-base: #24273a;
 	--ctp-macchiato-subtext1: #b8c0e0;
 	--ctp-macchiato-subtext0: #a5adcb;
+	--ctp-macchiato-mauve: #c6a0f6;
 	color: var(--ctp-macchiato-text);
 
 	font-family: "Fira Code";
@@ -47,4 +48,9 @@ text {
 	color: var(--ctp-macchiato-subtext0);
 	font-size: 1.3rem;
 	padding-left: 2.5em;
+
+#phase {
+	color: var(--ctp-macchiato-mauve);
+	font-size: 1.0rem;
+	padding-left: 2.5rem;
 }

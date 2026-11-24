@@ -43,9 +43,9 @@
           </object>
         </child>
         <child>
-          <object class="GtkLabel" id="infoLabel">
-            <property name="name">subtext</property>
-            <property name="label" translatable="yes">Run Stats Unknown</property>
+          <object class="GtkLabel" id="phaseLabel">
+            <property name="name">phase</property>
+            <property name="label" translatable="yes">Phase Unknown</property>
             <property name="halign">start</property>
           </object>
         </child>
