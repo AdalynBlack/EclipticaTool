@@ -191,8 +191,97 @@ static void check_files(GFileMonitor *monitor, GFile *file, GFile *other_file, G
 }
 
 char *find_logs() {
-	char *logs = "/home/adi/.steam/steam/steamapps/compatdata/vrchat/users/steamuser/AppData/LocalLow/VRChat/VRChat/";
-	return logs;
+#ifdef WINDOWS
+	char log_path[260];
+	sprintf(log_path, "%s\\AppData\\LocalLow\\VRChat\\VRChat\\", getenv("USERPROFILE"));
+	g_debug("log_path = %s", log_path);
+	return log_path;
+#elif __linux__
+	char *log_path = NULL;
+
+	char *home = getenv("HOME");
+	char libraryfolders_path[4096];
+	sprintf(libraryfolders_path, "%s/.steam/steam/steamapps/libraryfolders.vdf", home);
+
+	GFile *libraryfolders_file = g_file_new_for_path(libraryfolders_path);
+	if (!g_file_query_exists(libraryfolders_file, NULL)) {
+		g_object_unref(libraryfolders_file);
+
+		sprintf(libraryfolders_path, "%s/.var/app/com.valvesoftware.Steam/data/Steam/steamapps/libraryfolders.vdf", home);
+		libraryfolders_file = g_file_new_for_path(libraryfolders_path);
+
+	}
+
+	if (!g_file_query_exists(libraryfolders_file, NULL)) {
+		g_warning("Unable to find \"%s\"", libraryfolders_path);
+		goto cleanup_libraryfolders_file;
+	}
+
+	g_debug("libraryfolders_path = %s", libraryfolders_path);
+
+	GError *error = NULL;
+	GFileIOStream *stream = g_file_open_readwrite(libraryfolders_file, NULL, &error);
+
+	if (error != NULL) {
+		g_warning("Error opening libraryfolders.vdf stream: \"%s\"", error->message);
+		g_error_free(error);
+		goto cleanup_stream;
+	}
+
+	GInputStream *input_stream = g_io_stream_get_input_stream(&stream->parent_instance);
+	GDataInputStream *data_stream = g_data_input_stream_new(input_stream);
+
+	gsize bytes;
+	char *line;
+
+	while ((line = g_data_input_stream_read_line(data_stream, &bytes, NULL, &error)) != NULL) {
+		if (error != NULL) {
+			g_warning("Error reading from libraryfolders.vdf: \"%s\"", error->message);
+			g_error_free(error);
+			goto cleanup_input_streams;
+		}
+
+
+		char temp[4096];
+		char drive_path[4096];
+
+		// Extract any drive paths encountered
+		if (1 == sscanf(line, "%*[^\"]\"path\"%*[^\"]\"%[^\"]\"", temp)) {
+			strcpy(drive_path, temp);
+		}
+
+		// If we can grab the install size for VRChat, we know the last path seen is where it's installed
+		uint64_t install_size;
+		if (1 != sscanf(line, "%*[^\"]\"438100\"%*[^\"]\"%ld\"", &install_size))
+			continue;
+
+
+		if (strlen(drive_path) == 0) {
+			g_warning("Found install size before drive path. This should never happen.");
+			continue;
+		}
+
+		const char *compatdata_format = "%s/steamapps/compatdata/438100/pfx/drive_c/users/steamuser/AppData/LocalLow/VRChat/VRChat/";
+		int length = strlen(drive_path) + strlen(compatdata_format);
+		log_path = (char*) malloc(sizeof(char) * length);
+		sprintf(log_path, compatdata_format, drive_path);
+		break;
+	}
+
+cleanup_input_streams:
+	g_object_unref(data_stream);
+cleanup_stream:
+	g_object_unref(stream);
+cleanup_libraryfolders_file:
+	g_object_unref(libraryfolders_file);
+
+	g_debug("log_path = %s", log_path);
+	return log_path;
+
+#else
+	g_warning("Automatic log file detection is not supported on your OS");
+	return NULL;
+#endif
 };
 
 void logwatch_start(GtkApplication *app, struct home_state *home_state) {
