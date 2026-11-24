@@ -23,8 +23,7 @@
               <object class="GtkImage" id="bossIcon">
                 <property name="name">boss-box</property>
                 <property name="pixel_size">64</property>
-                <property name="has_tooltip">yes</property>
-                <property name="tooltip_text">No Active Boss</property>
+                <property name="tooltip_text" translatable="yes">No Active Boss</property>
               </object>
             </child>
             <child>

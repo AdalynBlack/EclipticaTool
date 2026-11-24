@@ -138,6 +138,7 @@ void boss_fight_cb(char *boss_name, float phase, struct home_state *state) {
 	sprintf(boss_resource, "/ecliptica/tool/assets/bosses/%s.png", boss_name);
 	gtk_image_set_from_resource(GTK_IMAGE(state->ui->boss_icon), boss_resource);
 
+	gtk_widget_set_tooltip_text(GTK_WIDGET(state->ui->boss_icon), boss_name);
 
 	set_phase(phase, state);
 }

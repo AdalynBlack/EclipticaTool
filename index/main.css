@@ -47,7 +47,14 @@ text {
 #subtext {
 	color: var(--ctp-macchiato-subtext0);
 	font-size: 1.3rem;
-	padding-left: 2.5em;
+	padding-left: 2.5rem;
+}
+
+tooltip {
+	color: var(--subtext);
+	font-size: 1rem;
+	padding: 0.3rem;
+}
 
 #phase {
 	color: var(--ctp-macchiato-mauve);
