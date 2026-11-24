@@ -152,7 +152,6 @@ void read_cb(GObject *object, GAsyncResult *result, gpointer user_data) {
 
 	if (line == NULL)
 		return;
-	g_message("%s", line);
 
 	char level[32];
 	char message[1024];
