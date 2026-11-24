@@ -31,6 +31,10 @@ void home_connect(GtkApplication *app) {
 }
 
 static void get_objects(GtkBuilder *builder, struct home_ui *ui) {
+	ui->boss_icon = gtk_builder_get_object(builder, "bossIcon");
+	ui->boss_label = gtk_builder_get_object (builder, "bossLabel");
+
+	ui->boss_target_label = gtk_builder_get_object (builder, "bossTargetLabel");
 	ui->target_label = gtk_builder_get_object (builder, "targetLabel");
 
 	ui->damage_label = gtk_builder_get_object (builder, "damageLabel");
@@ -38,7 +42,5 @@ static void get_objects(GtkBuilder *builder, struct home_ui *ui) {
 	ui->stage_damage_label = gtk_builder_get_object (builder, "stageDamageLabel");
 
 	ui->phase_label = gtk_builder_get_object (builder, "phaseLabel");
-	ui->boss_label = gtk_builder_get_object (builder, "bossLabel");
-	ui->boss_icon = gtk_builder_get_object(builder, "bossIcon");
 };
 

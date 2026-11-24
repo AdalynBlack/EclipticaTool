@@ -9,6 +9,10 @@ struct home_state {
 };
 
 struct home_ui {
+	GObject *boss_icon;
+	GObject *boss_label;
+
+	GObject *boss_target_label;
 	GObject *target_label;
 
 	GObject *damage_label;
@@ -16,6 +20,4 @@ struct home_ui {
 	GObject *boss_damage_label;
 
 	GObject *phase_label;
-	GObject *boss_label;
-	GObject *boss_icon;
 };
