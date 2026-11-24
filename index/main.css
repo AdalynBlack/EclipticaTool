@@ -1,12 +1,15 @@
 window {
-	--ctp-macchiato-text: #cad3f5;
-	--ctp-macchiato-base: #24273a;
-	--ctp-macchiato-subtext1: #b8c0e0;
-	--ctp-macchiato-subtext0: #a5adcb;
-	--ctp-macchiato-mauve: #c6a0f6;
-	--ctp-macchiato-maroon: #ee99a0;
-	--ctp-macchiato-yellow: #eed49f;
-	color: var(--ctp-macchiato-text);
+	/* Colors from Catppuccin Macchiato */
+	--mauve: #c6a0f6;
+	--red: #ed8796;
+	--maroon: #ee99a0;
+	--yellow: #eed49f;
+
+	--text: #cad3f5;
+	--subtext: #a5adcb;
+	--base: #24273a;
+
+	color: var(--text);
 
 	font-family: "Fira Code";
 	font-size: 2rem;
@@ -34,30 +37,30 @@ text {
 }
 
 #target-self.boss-target {
-	color: var(--ctp-macchiato-red);
+	color: var(--red);
 }
 
 .target {
 	font-size: 1.0rem;
-	color: var(--ctp-macchiato-subtext);
+	color: var(--subtext);
 	margin-left: 1.0rem;
 }
 
 #target-self.target {
-	color: var(--ctp-macchiato-maroon);
+	color: var(--maroon);
 }
 
 #boss-box {
 	margin-bottom: .8rem;
 	margin-right: 1rem;
-	border-right: .05rem solid var(--ctp-macchiato-text);
-	border-bottom: .05rem solid var(--ctp-macchiato-text);
+	border-right: .05rem solid var(--text);
+	border-bottom: .05rem solid var(--text);
 	border-radius: 1rem;
 	font-size: 0.5rem;
 }
 
 #subtext {
-	color: var(--ctp-macchiato-subtext0);
+	color: var(--subtext);
 	font-size: 1.3rem;
 	padding-left: 2.5rem;
 }
@@ -69,21 +72,21 @@ tooltip {
 }
 
 #stage-damage {
-	color: var(--ctp-macchiato-yellow);
+	color: var(--yellow);
 	font-size: 1.0rem;
 	padding-left: 3.0rem;
 	min-width: 3em;
 }
 
 #boss-damage {
-	color: var(--ctp-macchiato-maroon);
+	color: var(--maroon);
 	font-size: 1.0rem;
 	min-width: 3em;
 	padding-left: 1.5em;
 }
 
 #phase {
-	color: var(--ctp-macchiato-mauve);
+	color: var(--mauve);
 	font-size: 1.0rem;
 	padding-left: 2.5rem;
 }
