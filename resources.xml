@@ -4,6 +4,6 @@
 		<file compressed="true">index/main.css</file>
 		<file compressed="true">index/home.ui</file>
 		<file>assets/maps/Beginning_Lobby.png</file>
-		<file>assets/maps/The_Inbetween.webp</file>
+		<file>assets/maps/The_Inbetween.png</file>
 	</gresource>
 </gresources>
