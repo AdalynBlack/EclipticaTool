@@ -19,6 +19,7 @@ enum DAMAGE_TYPE {
 	UNKNOWN = -1,
 	STRIKE = 0,
 	NON_STRIKE = 1,
+	MIXED = 2,
 };
 
 struct damage {

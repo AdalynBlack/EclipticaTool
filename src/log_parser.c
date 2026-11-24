@@ -50,11 +50,27 @@ void damage_dealt_cb(struct damage damage, time_t timestamp, struct home_state *
 	}
 
 	latest_damage->amount += damage.amount;
+	if (latest_damage->type == UNKNOWN)
+		latest_damage->type = damage.type;
+	else if (latest_damage->type != damage.type)
+		latest_damage->type = MIXED;
 
-	sprintf(label, _("%d %s Damage Dealt"), latest_damage->amount, damage.type == STRIKE ? C_("Damage Type", "DIRECT") : C_("Damage Type", "INDIRECT"));
-	gtk_label_set_text(GTK_LABEL(state->ui->damage_label), label);
+	char damage_type[32];
+	switch (latest_damage->type) {
+		case STRIKE:
+			strncpy(damage_type, C_("Damage Type", "DIRECT"), 32);
+			break;
+		case NON_STRIKE:
+			strncpy(damage_type, C_("Damage Type", "INDIRECT"), 32);
+			break;
+		case MIXED:
+			strncpy(damage_type, C_("Damage Type", "MIXED"), 32);
+			break;
+		default:
+			strncpy(damage_type, C_("Damage Type", "UNKNOWN"), 32);
+	}
 
-	sprintf(label, _("%d Stage Damage"), state->game->damage.per_stage[state->game->damage.current_stage].amount);
+	sprintf(label, _("%d %s Damage Dealt"), latest_damage->amount, damage_type);
 	gtk_label_set_text(GTK_LABEL(state->ui->damage_label), label);
 }
 
