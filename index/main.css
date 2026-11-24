@@ -5,6 +5,7 @@ window {
 	--ctp-macchiato-subtext0: #a5adcb;
 	--ctp-macchiato-mauve: #c6a0f6;
 	--ctp-macchiato-maroon: #ee99a0;
+	--ctp-macchiato-yellow: #eed49f;
 	color: var(--ctp-macchiato-text);
 
 	font-family: "Fira Code";
@@ -65,6 +66,20 @@ tooltip {
 	color: var(--subtext);
 	font-size: 1rem;
 	padding: 0.3rem;
+}
+
+#stage-damage {
+	color: var(--ctp-macchiato-yellow);
+	font-size: 1.0rem;
+	padding-left: 3.0rem;
+	min-width: 3em;
+}
+
+#boss-damage {
+	color: var(--ctp-macchiato-maroon);
+	font-size: 1.0rem;
+	min-width: 3em;
+	padding-left: 1.5em;
 }
 
 #phase {

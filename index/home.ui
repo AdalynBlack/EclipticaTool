@@ -61,6 +61,26 @@
           </object>
         </child>
         <child>
+          <object class="GtkBox">
+            <child>
+              <object class="GtkLabel" id="stageDamageLabel">
+                <property name="name">stage-damage</property>
+                <property name="label">0</property>
+                <property name="xalign">0.0</property>
+                <property name="tooltip_text" translatable="yes">Stage Damage (Partially Implemented)</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="bossDamageLabel">
+                <property name="name">boss-damage</property>
+                <property name="label">?</property>
+                <property name="xalign">0.0</property>
+                <property name="tooltip_text" translatable="yes">Boss Damage (Unimplemented)</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
           <object class="GtkLabel" id="phaseLabel">
             <property name="name">phase</property>
             <property name="label" translatable="yes">Phase Unknown</property>

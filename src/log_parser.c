@@ -79,6 +79,9 @@ void damage_dealt_cb(struct damage damage, time_t timestamp, struct home_state *
 
 	sprintf(label, _("%d %s Damage Dealt"), latest_damage->amount, damage_type);
 	gtk_label_set_text(GTK_LABEL(state->ui->damage_label), label);
+
+	sprintf(label, _("%d"), state->game->damage.per_stage[state->game->damage.current_stage].amount);
+	gtk_label_set_text(GTK_LABEL(state->ui->stage_damage_label), label);
 }
 
 void login_cb(char *user, struct home_state *state) {
