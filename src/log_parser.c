@@ -131,10 +131,13 @@ void stage_change_cb(char *stage_name, float phase, char *class, struct home_sta
 }
 
 void boss_fight_cb(char *boss_name, float phase, struct home_state *state) {
-	char label[256];
+	char boss_resource[256];
 
-	sprintf(label, "assets/bosses/%s.png", boss_name);
-	gtk_image_set_from_file(GTK_IMAGE(state->ui->boss_icon), label);
+	strncpy(state->game->stage.boss, boss_name, 64);
+
+	sprintf(boss_resource, "/ecliptica/tool/assets/bosses/%s.png", boss_name);
+	gtk_image_set_from_resource(GTK_IMAGE(state->ui->boss_icon), boss_resource);
+
 
 	set_phase(phase, state);
 }

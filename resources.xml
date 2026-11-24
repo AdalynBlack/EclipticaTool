@@ -3,7 +3,42 @@
 	<gresource prefix="/ecliptica/tool">
 		<file compressed="true">index/main.css</file>
 		<file compressed="true">index/home.ui</file>
+
 		<file>assets/maps/Beginning_Lobby.png</file>
 		<file>assets/maps/The_Inbetween.png</file>
+
+		<file>assets/bosses/Amaziah.png</file>
+		<file alias="assets/bosses/AntKingPhase2.png">assets/bosses/AntKing.png</file>
+		<file>assets/bosses/Beelzebub.png</file>
+		<file>assets/bosses/BlackLily.png</file>
+		<file alias="assets/bosses/BraveraPhase2.png">assets/bosses/Bravera.png</file>
+		<file>assets/bosses/BuffNoob.png</file>
+		<file alias="assets/bosses/ConeHeadPhase2.png">assets/bosses/ConeHead.png</file>
+		<file alias="assets/bosses/CorusPhase2.png">assets/bosses/Corus.png</file>
+		<file>assets/bosses/DarkMouth.png</file>
+		<file alias="assets/bosses/GilgameshPhase3.png">assets/bosses/Gilgamesh.png</file>
+		<file>assets/bosses/GilgameshPhase2.png</file>
+		<file alias="assets/bosses/GoldenGrouchPhase2.png">assets/bosses/GoldenGrouch.png</file>
+		<file>assets/bosses/Gravetender.png</file>
+		<file>assets/bosses/Hakli.png</file>
+		<file alias="assets/bosses/JackedPumpkinPhase2.png">assets/bosses/JackedPumpkin.png</file>
+		<file alias="assets/bosses/JimBringerPhase3.png">assets/bosses/JimBringer.png</file>
+		<file>assets/bosses/JimBringerPhase2.png</file>
+		<file>assets/bosses/Kakarot.png</file>
+		<file>assets/bosses/Kodama.png</file>
+		<file>assets/bosses/M41D.png</file>
+		<file alias="assets/bosses/ManalyteAncientPhase2.png">assets/bosses/ManalyteAncient.png</file>
+		<file>assets/bosses/Maxipuss.png</file>
+		<file alias="assets/bosses/MephielPhase2.png">assets/bosses/Mephiel.png</file>
+		<file>assets/bosses/Middleman.png</file>
+		<file>assets/bosses/NaN.png</file>
+		<file alias="assets/bosses/NeoPilotPhase2.png">assets/bosses/NeoPilot.png</file>
+		<file>assets/bosses/OnyxPilot.png</file>
+		<file>assets/bosses/Pandora.png</file>
+		<file>assets/bosses/Pride.png</file>
+		<file>assets/bosses/QueenBug.png</file>
+		<file>assets/bosses/QueenVolt.png</file>
+		<file>assets/bosses/Steven.png</file>
+		<file alias="assets/bosses/YukiPhase2.png">assets/bosses/Yuki.png</file>
 	</gresource>
 </gresources>
