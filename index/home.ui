@@ -27,9 +27,28 @@
               </object>
             </child>
             <child>
-              <object class="GtkLabel" id="targetLabel">
-                <property name="label" translatable="yes">No Target</property>
-                <property name="halign">start</property>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="bossTargetLabel">
+                    <property name="name">target-other</property>
+                    <style>
+                      <class name="boss-target"/>
+                    </style>
+                    <property name="label" translatable="yes">No Target</property>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="targetLabel">
+                    <property name="name">target-other</property>
+                    <style>
+                      <class name="target"/>
+                    </style>
+                    <property name="label" translatable="yes">No Target</property>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>

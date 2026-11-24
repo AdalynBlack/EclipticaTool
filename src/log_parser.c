@@ -3,14 +3,21 @@
 void ownership_cb(char *entity, char *owner, struct home_state *state) {
 	char label[1024];
 
-	sprintf(label, _("%s: %s"), entity, owner);
+	GObject *target_label;
+	if (strcmp(entity, state->game->stage.boss) == 0) {
+		target_label = state->ui->boss_target_label;
+		sprintf(label, "%s", owner);
+	} else {
+		target_label = state->ui->target_label;
+		sprintf(label, "%s: %s", entity, owner);
+	}
 
 	if (strcmp(owner, state->game->user.name) == 0)
-		gtk_widget_set_name(GTK_WIDGET(state->ui->target_label), "target-self");
+		gtk_widget_set_name(GTK_WIDGET(target_label), "target-self");
 	else
-		gtk_widget_set_name(GTK_WIDGET(state->ui->target_label), "target-other");
+		gtk_widget_set_name(GTK_WIDGET(target_label), "target-other");
 
-	gtk_label_set_text(GTK_LABEL(state->ui->target_label), label);
+	gtk_label_set_text(GTK_LABEL(target_label), label);
 }
 
 void damage_dealt_cb(struct damage damage, time_t timestamp, struct home_state *state) {

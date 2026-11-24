@@ -12,6 +12,7 @@ struct home_ui {
 	GObject *target_label;
 
 	GObject *damage_label;
+	GObject *stage_damage_label;
 	GObject *boss_damage_label;
 
 	GObject *phase_label;

@@ -4,8 +4,8 @@
 #include <string.h>
 
 struct stage_state {
-	char *stage;
-	char *boss;
+	char stage[64];
+	char boss[64];
 	float phase;
 	time_t start_time;
 };

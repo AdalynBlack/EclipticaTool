@@ -4,6 +4,7 @@ window {
 	--ctp-macchiato-subtext1: #b8c0e0;
 	--ctp-macchiato-subtext0: #a5adcb;
 	--ctp-macchiato-mauve: #c6a0f6;
+	--ctp-macchiato-maroon: #ee99a0;
 	color: var(--ctp-macchiato-text);
 
 	font-family: "Fira Code";
@@ -31,8 +32,18 @@ text {
 	text-shadow: 3px 3px;
 }
 
-#target-self {
-	color: oklab(from var(--accent-red) var(--standalone-color-oklab));
+#target-self.boss-target {
+	color: var(--ctp-macchiato-red);
+}
+
+.target {
+	font-size: 1.0rem;
+	color: var(--ctp-macchiato-subtext);
+	margin-left: 1.0rem;
+}
+
+#target-self.target {
+	color: var(--ctp-macchiato-maroon);
 }
 
 #boss-box {
