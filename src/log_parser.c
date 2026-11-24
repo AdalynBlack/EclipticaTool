@@ -204,9 +204,10 @@ void read_cb(GObject *object, GAsyncResult *result, gpointer user_data) {
 					class)) {
 			stage_change_cb(stage, phase, class, state);
 
-		} else if (1 == sscanf(message,
-				"ECLIPTICA - now fighting boss: %31[^(] on phase: %*f",
-					entity)) {
+		} else if (2 == sscanf(message,
+				"ECLIPTICA - now fighting boss: %31[^(](Clone) on phase: %f",
+					entity,
+					&phase)) {
 			boss_fight_cb(entity, phase, state);
 
 		} else
